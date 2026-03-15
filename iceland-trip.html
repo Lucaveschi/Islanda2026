@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Islanda Ring Road — 23–31 Marzo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #1C2E4A;
+  --blue:   #0B6CAA;
+  --teal:   #0D8A8A;
+  --orange: #C95F28;
+  --green:  #2A8A5A;
+  --text:   #1E2D3D;
+  --muted:  #5A6B7C;
+  --border: #C5D5E0;
+  --bg:     #FFFFFF;
+  --bg-soft:#F2F7FA;
+  --bg-day: #EBF3F9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 15px; }
+body { font-family: 'Source Sans 3', sans-serif; background: var(--bg-soft); color: var(--text); line-height: 1.6; }
+
+/* ── PAGE WRAPPER ── */
+.page {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-child { page-break-after: auto; break-after: auto; }
+
+/* ── COVER ── */
+.cover {
+  background: var(--navy);
+  color: #fff;
+  padding: 4rem 3rem 3rem;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cover-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #7CBDE0;
+  margin-bottom: 1.2rem;
+}
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+.cover h1 em {
+  display: block;
+  font-size: 0.38em;
+  font-style: italic;
+  font-weight: 400;
+  color: #A8C8DE;
+  letter-spacing: 0.04em;
+  margin-top: 0.5rem;
+}
+.cover-meta {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #A8C8DE;
+  margin-top: 1rem;
+}
+.cover-stats {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+.cover-stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.cover-stat-lbl {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #7CBDE0;
+  margin-top: 0.1rem;
+}
+
+/* ── OVERVIEW PAGE ── */
+.overview-body { padding: 2.5rem 2.5rem 2rem; }
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 0.6rem;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+
+.overview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin-bottom: 1.5rem;
+}
+.overview-table th {
+  background: var(--navy);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+}
+.overview-table td {
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.overview-table tr:last-child td { border-bottom: none; }
+.overview-table tr:nth-child(even) td { background: var(--bg-soft); }
+.overview-table .day-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--blue);
+  white-space: nowrap;
+}
+.overview-table .alloggio-name { font-weight: 600; }
+.overview-table .alloggio-loc { font-size: 0.82rem; color: var(--muted); }
+.overview-table .price-cell {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--teal);
+  text-align: right;
+  white-space: nowrap;
+}
+.total-row td {
+  background: var(--bg-day) !important;
+  font-weight: 700;
+  border-top: 2px solid var(--navy) !important;
+}
+.total-row .price-cell {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--navy);
+}
+
+/* ── DAY PAGE ── */
+.day-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 1.4rem 2rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.day-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #7CBDE0;
+}
+.day-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  flex: 1;
+  padding: 0 1.5rem;
+}
+.day-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #A8C8DE;
+  white-space: nowrap;
+}
+
+.route-bar {
+  background: var(--bg-day);
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  flex-wrap: wrap;
+}
+.route-from { font-weight: 600; color: var(--navy); }
+.route-arrow { color: var(--blue); font-size: 1rem; }
+.route-to { font-weight: 600; color: var(--navy); }
+.route-dist {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 0.2rem 0.7rem;
+}
+
+.day-body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 0;
+}
+.day-left {
+  padding: 1.8rem 2rem;
+  border-right: 1px solid var(--border);
+}
+.day-right {
+  padding: 1.8rem 1.6rem;
+  background: var(--bg-soft);
+}
+
+.col-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Attractions */
+.attraction {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid #EAF0F5;
+}
+.attraction:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.attr-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+.attr-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy);
+  margin-bottom: 0.15rem;
+}
+.attr-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.attr-warn {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+/* Booking card */
+.booking-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  break-inside: avoid;
+}
+.booking-card-header {
+  background: var(--blue);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'JetBrains Mono', monospace;
+}
+.booking-card-body { padding: 0.9rem 1rem; }
+.booking-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+.booking-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+  align-items: flex-start;
+}
+.booking-row-icon { flex-shrink: 0; font-size: 0.9rem; margin-top: 0.05rem; }
+.booking-row-text { color: var(--text); line-height: 1.4; }
+.booking-row-text strong { color: var(--navy); }
+.booking-row-text .mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+.booking-price {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.booking-price-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+.booking-price-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--teal);
+}
+.booking-alert {
+  margin-top: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  background: #FFF4EE;
+  border-left: 3px solid var(--orange);
+  border-radius: 4px;
+  font-size: 0.78rem;
+  color: var(--orange);
+  line-height: 1.4;
+  break-inside: avoid;
+}
+
+/* Day 9 departure */
+.departure-box {
+  padding: 2.5rem 2.5rem;
+  text-align: center;
+}
+.departure-icon { font-size: 3rem; margin-bottom: 1rem; }
+.departure-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.departure-subtitle { color: var(--muted); font-size: 0.95rem; }
+
+/* Ref page */
+.ref-body { padding: 2rem 2.5rem; }
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin-bottom: 1.5rem;
+}
+.ref-table th {
+  background: var(--navy);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+}
+.ref-table td {
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.ref-table tr:nth-child(even) td { background: var(--bg-soft); }
+.ref-table .mono { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--blue); }
+.ref-table .tel { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; }
+
+/* Tag pills */
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.tag {
+  font-size: 0.68rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 100px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.tag-blue { background: #E3F0FB; color: #0B6CAA; }
+.tag-teal { background: #DDF2F1; color: #0D7A7A; }
+.tag-orange { background: #FCEEE5; color: #C95F28; }
+.tag-green { background: #E0F4EC; color: #2A7A52; }
+.tag-purple { background: #EDE9F7; color: #6040A8; }
+
+/* Useful info box */
+.info-box {
+  background: var(--bg-day);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.9rem 1rem;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+}
+.info-box-title {
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.info-box ul { padding-left: 1.2rem; }
+.info-box li { margin-bottom: 0.3rem; color: var(--muted); }
+
+/* ── PRINT ── */
+@media print {
+  @page { size: A4 portrait; margin: 1.5cm 1.5cm; }
+
+  body { background: #fff; font-size: 11pt; }
+  .page {
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    page-break-after: always;
+    break-after: page;
+    max-width: 100%;
+    border: none;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  /* keep booking cards together */
+  .booking-card { break-inside: avoid; }
+  .attraction { break-inside: avoid; }
+
+  /* day body on one page ideally */
+  .day-body { break-inside: avoid; }
+
+  /* tighten spacing for print */
+  .day-left, .day-right { padding: 1.2rem 1.2rem; }
+  .overview-body, .ref-body { padding: 1.5rem 1.5rem; }
+
+  /* ensure colors print */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .cover { min-height: 280px; }
+}
+
+/* ── SCREEN NAV ── */
+.screen-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.screen-nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #A8C8DE;
+  text-decoration: none;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.screen-nav a:hover { color: #fff; border-bottom-color: #7CBDE0; }
+
+@media print { .screen-nav { display: none; } }
+
+@media (max-width: 700px) {
+  .day-body { grid-template-columns: 1fr; }
+  .day-left { border-right: none; border-bottom: 1px solid var(--border); }
+  .day-right { background: var(--bg); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ SCREEN NAV ═══ -->
+<nav class="screen-nav">
+  <a href="#cover">Intro</a>
+  <a href="#overview">Riepilogo</a>
+  <a href="#g1">G1</a>
+  <a href="#g2">G2</a>
+  <a href="#g3">G3</a>
+  <a href="#g4">G4</a>
+  <a href="#g5">G5</a>
+  <a href="#g6">G6</a>
+  <a href="#g7">G7</a>
+  <a href="#g8">G8</a>
+  <a href="#g9">G9</a>
+  <a href="#ref">Ref</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     COPERTINA
+════════════════════════════════════════════ -->
+<div class="page" id="cover">
+  <div class="cover">
+    <div>
+      <div class="cover-eyebrow">Ring Road · Itinerario di viaggio</div>
+      <h1>Ísland
+        <em>Tappe, località e organizzazione</em>
+      </h1>
+      <p class="cover-meta">23 – 31 Marzo 2026 &nbsp;·&nbsp; 7 persone &nbsp;·&nbsp; 9 giorni</p>
+    </div>
+    <div class="cover-stats">
+      <div>
+        <div class="cover-stat-val">~1.715</div>
+        <div class="cover-stat-lbl">Km totali</div>
+      </div>
+      <div>
+        <div class="cover-stat-val">9</div>
+        <div class="cover-stat-lbl">Giorni</div>
+      </div>
+      <div>
+        <div class="cover-stat-val">8</div>
+        <div class="cover-stat-lbl">Notti</div>
+      </div>
+      <div>
+        <div class="cover-stat-val">7</div>
+        <div class="cover-stat-lbl">Persone</div>
+      </div>
+      <div>
+        <div class="cover-stat-val">€2.222</div>
+        <div class="cover-stat-lbl">Totale alloggi</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     RIEPILOGO GENERALE
+════════════════════════════════════════════ -->
+<div class="page" id="overview">
+  <div class="overview-body">
+    <div class="section-label">Riepilogo viaggio</div>
+    <div class="section-title">8 notti lungo la Ring Road</div>
+
+    <table class="overview-table">
+      <thead>
+        <tr>
+          <th>Giorno</th>
+          <th>Data</th>
+          <th>Percorso</th>
+          <th>Alloggio</th>
+          <th style="text-align:right">Costo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day-num">G1</td>
+          <td>Lun 23 Mar</td>
+          <td>KEF → Fossatún</td>
+          <td>
+            <div class="alloggio-name">Fossatun Camping Pods</div>
+            <div class="alloggio-loc">3 bungalow · Conf: 5345748490</div>
+          </td>
+          <td class="price-cell">€210,31</td>
+        </tr>
+        <tr>
+          <td class="day-num">G2</td>
+          <td>Mar 24 Mar</td>
+          <td>Fossatún → Snæfellsnes</td>
+          <td>
+            <div class="alloggio-name">Fagrabrekka Guesthouse</div>
+            <div class="alloggio-loc">2 cam. matrimoniali · Conf: 5923780546</div>
+          </td>
+          <td class="price-cell">€172,50</td>
+        </tr>
+        <tr>
+          <td class="day-num">G3</td>
+          <td>Mer 25 Mar</td>
+          <td>Snæfellsnes → Varmahlíð</td>
+          <td>
+            <div class="alloggio-name">Hlín Guesthouse</div>
+            <div class="alloggio-loc">3 camere · Conf: 5053573430</div>
+          </td>
+          <td class="price-cell">€277,71</td>
+        </tr>
+        <tr>
+          <td class="day-num">G4</td>
+          <td>Gio 26 Mar</td>
+          <td>Varmahlíð → Mývatn</td>
+          <td>
+            <div class="alloggio-name">Vogar Travel Service</div>
+            <div class="alloggio-loc">2 camere · Conf: 6034027040</div>
+          </td>
+          <td class="price-cell">€253,71</td>
+        </tr>
+        <tr>
+          <td class="day-num">G5</td>
+          <td>Ven 27 Mar</td>
+          <td>Mývatn → Höfn</td>
+          <td>
+            <div class="alloggio-name">Seljavellir Guesthouse</div>
+            <div class="alloggio-loc">3 camere · Conf: 6868494828</div>
+          </td>
+          <td class="price-cell">€373,23</td>
+        </tr>
+        <tr>
+          <td class="day-num">G6</td>
+          <td>Sab 28 Mar</td>
+          <td>Höfn → Vík</td>
+          <td>
+            <div class="alloggio-name">The Barn Hostel</div>
+            <div class="alloggio-loc">Dormitorio · Conf: 5663981789</div>
+          </td>
+          <td class="price-cell">€374,12</td>
+        </tr>
+        <tr>
+          <td class="day-num">G7</td>
+          <td>Dom 29 Mar</td>
+          <td>Vík → Laugarvatn</td>
+          <td>
+            <div class="alloggio-name">Héradsskólinn Historic GH</div>
+            <div class="alloggio-loc">3 camere · Conf: 5807501433</div>
+          </td>
+          <td class="price-cell">€365,16</td>
+        </tr>
+        <tr>
+          <td class="day-num">G8</td>
+          <td>Lun 30 Mar</td>
+          <td>Laugarvatn → Hafnarfjörður</td>
+          <td>
+            <div class="alloggio-name">Hostel Fjordur</div>
+            <div class="alloggio-loc">2 cam. quadruple · Conf: 6127932045</div>
+          </td>
+          <td class="price-cell">€195,43</td>
+        </tr>
+        <tr>
+          <td class="day-num">G9</td>
+          <td>Mar 31 Mar</td>
+          <td>Hafnarfjörður → KEF</td>
+          <td><div class="alloggio-name">✈️ Partenza</div></td>
+          <td class="price-cell">—</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="4" style="font-weight:700; font-size:0.9rem;">Totale alloggi (8 notti · 7 persone)</td>
+          <td class="price-cell" style="font-size:1.1rem;">€2.222,17</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="info-box">
+      <div class="info-box-title">Note generali</div>
+      <ul>
+        <li>Marzo: giornate ~12h di luce, possibile aurora boreale ogni sera limpida</li>
+        <li>Strade: Route 1 asfaltata, strade F e sterrati possono essere chiusi — controllare <strong>road.is</strong></li>
+        <li>Carburante: fare il pieno sempre quando disponibile, specialmente G5 (Mývatn→Höfn ~400 km)</li>
+        <li>Emergenze: <strong>112</strong> — Registrarsi su <strong>safetravel.is</strong></li>
+        <li>Meteo: controllare <strong>vedur.is</strong> ogni mattina</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 1 — Lunedì 23 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g1">
+  <div class="day-header">
+    <span class="day-badge">Giorno 1</span>
+    <span class="day-title">Arrivo & Zona Fossatún</span>
+    <span class="day-date">Lunedì 23 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">✈️ Keflavík (KEF)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Fossatún</span>
+    <span class="route-dist">~115 km · ~1h 30min</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">💧</div>
+        <div>
+          <div class="attr-name">Hraunfossar &amp; Barnafoss</div>
+          <div class="attr-desc">Cascate gemelle spettacolari: l'acqua di Hraunfossar filtra silenziosa attraverso il campo lavico come sorgenti, mentre Barnafoss forma rapide impetuose. Gratuito. ~25 min da Fossatún.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">♨️</div>
+        <div>
+          <div class="attr-name">Deildartunguhver</div>
+          <div class="attr-desc">La sorgente termale più potente d'Europa: 180 litri al secondo a 100°C. Krauma Geothermal Baths nelle vicinanze (~€40/pp). ~15 min da Fossatún.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">⭐</div>
+        <div>
+          <div class="attr-name">Reykholt — Snorri Sturluson</div>
+          <div class="attr-desc">Sito storico medievale: residenza di Snorri Sturluson, autore delle saghe norrene. ~20 min da Fossatún.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🕳️</div>
+        <div>
+          <div class="attr-name">Grotta di Víðgelmir</div>
+          <div class="attr-desc">Il più grande lava tube d'Islanda (~1.600 m). Tour guidato disponibile — prenotare online. ~30 min da Fossatún.</div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-title">⏱ Suggerimento orari</div>
+        <ul>
+          <li>Atterraggio → ritiro auto → guida verso est ~1h</li>
+          <li>Check-in Fossatun: <strong>16:00–20:00</strong> (non perdere la finestra)</li>
+          <li>Visita attrazioni in mattinata/pomeriggio se il volo è di prima mattina</li>
+        </ul>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 1 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">Fossatun Camping Pods &amp; Cottages</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Fossatún, 311 Fossatún, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">3 bungalow: 2 Duo + 1 Triple · 7 adulti</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> 16:00 – 20:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> entro le 11:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 893 9733</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">5345748490</span></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€210,31</span>
+          </div>
+        </div>
+      </div>
+      <div class="booking-alert">⚠️ Biancheria <strong>NON inclusa</strong> — sacchi a pelo ammessi. Reception aperta 15:00–20:00 (orario invernale).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 2 — Martedì 24 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g2">
+  <div class="day-header">
+    <span class="day-badge">Giorno 2</span>
+    <span class="day-title">Penisola di Snæfellsnes</span>
+    <span class="day-date">Martedì 24 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Fossatún</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Snæfellsnes → Fagrabrekka</span>
+    <span class="route-dist">~210 km · ~3h 30min guida</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">⛰️</div>
+        <div>
+          <div class="attr-name">Kirkjufell &amp; Kirkjufellsfoss</div>
+          <div class="attr-desc">La montagna più fotografata d'Islanda, iconica a forma di cono con la cascata ai piedi. A Grundarfjörður sulla costa nord della penisola.</div>
+          <div class="tags"><span class="tag tag-blue">Must-see</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏔️</div>
+        <div>
+          <div class="attr-name">Snæfellsjökull</div>
+          <div class="attr-desc">Vulcano-ghiacciaio reso immortale da Jules Verne in "Viaggio al centro della Terra". All'interno del Parco Nazionale omonimo.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🪨</div>
+        <div>
+          <div class="attr-name">Arnarstapi &amp; Gatklettur</div>
+          <div class="attr-desc">Scogliere spettacolari e arco di roccia naturale. Sentiero costiero fino a Hellnar (~2,5 km A/R). Ottimo per fotografia.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏖️</div>
+        <div>
+          <div class="attr-name">Djúpalónssandur</div>
+          <div class="attr-desc">Spiaggia nera con formazioni rocciose e resti di un naufragio. Le "Pietre del Sollevamento" testano la forza dei marinai: 23 kg, 54 kg, 100 kg, 154 kg.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">⛪</div>
+        <div>
+          <div class="attr-name">Chiesa nera di Búðir</div>
+          <div class="attr-desc">Iconica chiesetta nera isolata nel campo lavico di Búðahraun. Incredibilmente fotogenica, soprattutto con il cielo nuvoloso.</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 2 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">Fagrabrekka Guesthouse</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Fagrabrekka, 500 Staður, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">2 Camere Matrimoniali Economy · 7 adulti</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> 17:00 – 24:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> entro le 11:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 698 1687</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">5923780546</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">🔑</span><span class="booking-row-text"><strong>Keybox alla porta:</strong> codice <span class="mono">4443</span></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€172,50</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 3 — Mercoledì 25 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g3">
+  <div class="day-header">
+    <span class="day-badge">Giorno 3</span>
+    <span class="day-title">Zona Skagafjörður</span>
+    <span class="day-date">Mercoledì 25 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Fagrabrekka (Snæfellsnes)</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Varmahlíð</span>
+    <span class="route-dist">~220 km · ~2h 30min</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">🪨</div>
+        <div>
+          <div class="attr-name">Hvítserkur</div>
+          <div class="attr-desc">Monolite di roccia basaltica di 15m che emerge dal mare, a forma di drago o rinoceronte. Spettacolare con la bassa marea. ~45 min da Varmahlíð.</div>
+          <div class="attr-warn">⚠️ Strada sterrata — attenzione al fango in marzo.</div>
+          <div class="tags"><span class="tag tag-blue">Deviazione consigliata</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏡</div>
+        <div>
+          <div class="attr-name">Glaumbær</div>
+          <div class="attr-desc">Museo con fattoria tradizionale islandese con tetti d'erba, perfettamente conservata. Una delle più belle del Paese. ~10 min da Varmahlíð.</div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-title">Note di percorso</div>
+        <ul>
+          <li>La Route 1 costeggia la baia di Húnaflói — paesaggi aperti e desolati</li>
+          <li>Tappa di guida relativamente tranquilla: giornata di "transizione" verso il Nord</li>
+          <li>Fare il pieno a Borgarnes o lungo il percorso</li>
+        </ul>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 3 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">Hlín Guesthouse</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Steinsstaðir, 560 Varmahlíð, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">3 camere: matrimoniale + tripla + doppia · 7 adulti</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> 16:00 – 23:30</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> 07:30 – 11:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 772 7957</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">5053573430</span></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€277,71</span>
+          </div>
+        </div>
+      </div>
+      <div class="booking-alert">⚠️ Nessuna reception — contattare in anticipo per istruzioni di accesso.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 4 — Giovedì 26 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g4">
+  <div class="day-header">
+    <span class="day-badge">Giorno 4</span>
+    <span class="day-title">Akureyri &amp; Mývatn</span>
+    <span class="day-date">Giovedì 26 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Varmahlíð</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Akureyri → Mývatn</span>
+    <span class="route-dist">~170 km · ~2h guida</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏙️</div>
+        <div>
+          <div class="attr-name">Akureyri — Capitale del Nord</div>
+          <div class="attr-desc">Città vivace con giardino botanico artico, caffè accoglienti e l'Akureyrarkirkja. Ottima per pranzo e rifornimento. ~1h da Varmahlíð.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">💧</div>
+        <div>
+          <div class="attr-name">Goðafoss — La Cascata degli Dei</div>
+          <div class="attr-desc">Semicircolare, larga 30m, alta 12m. Nel 1000 d.C. qui furono gettate le statue pagane al momento della conversione al Cristianesimo. ~40 min da Akureyri.</div>
+          <div class="tags"><span class="tag tag-teal">Must-see</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">♨️</div>
+        <div>
+          <div class="attr-name">Hverir / Námaskarð</div>
+          <div class="attr-desc">Area geotermica lunare con fumarole, pozze di fango bollente e depositi di zolfo. Gratuito. Forte odore di zolfo — restare sui sentieri!</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏰</div>
+        <div>
+          <div class="attr-name">Dimmuborgir — Castelli Oscuri</div>
+          <div class="attr-desc">Formazioni laviche surreali con archi e grotte. Sentieri segnalati 1–3 km. Secondo la leggenda è la porta per il mondo sotterraneo. Gratuito.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🌊</div>
+        <div>
+          <div class="attr-name">Mývatn Nature Baths</div>
+          <div class="attr-desc">La "Blue Lagoon del Nord", meno affollata e più economica (~€40/pp). Piscina geotermica turchese con vista sul lago. Prenotare online consigliato.</div>
+          <div class="tags"><span class="tag tag-purple">Prenotare online</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🕳️</div>
+        <div>
+          <div class="attr-name">Grjótagjá</div>
+          <div class="attr-desc">Grotta termale vulcanica — set di Game of Thrones (Jon Snow &amp; Ygritte). Acqua troppo calda per bagnarsi, solo da ammirare dall'interno.</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 4 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">Vogar Travel Service</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Vogar, 660 Mývatn, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">2 camere: familiare + tripla · 7 adulti</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> 16:00 – 23:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> 06:00 – 11:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 464 4399</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">6034027040</span></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€253,71</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 5 — Venerdì 27 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g5">
+  <div class="day-header">
+    <span class="day-badge">Giorno 5</span>
+    <span class="day-title">Mývatn → Höfn</span>
+    <span class="day-date">Venerdì 27 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Mývatn</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Dettifoss → Egilsstaðir → Höfn</span>
+    <span class="route-dist">~400 km · ~4h 30min guida</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">💧</div>
+        <div>
+          <div class="attr-name">Dettifoss</div>
+          <div class="attr-desc">La cascata più potente d'Europa: 100m di larghezza, 44m di altezza, 500 m³/sec. Impressionante. Deviazione ~30 min da Route 1 (strada 862 lato ovest).</div>
+          <div class="attr-warn">⚠️ Verificare condizioni strada 862 a marzo — potrebbe essere chiusa. In tal caso usare strada 864 (est).</div>
+          <div class="tags"><span class="tag tag-blue">Must-see</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🛒</div>
+        <div>
+          <div class="attr-name">Egilsstaðir — Sosta pranzo</div>
+          <div class="attr-desc">Principale centro urbano dei fiordi orientali. Supermercato Bónus (il più economico, col maialino rosa), ristoranti, rifornimento carburante. A metà percorso.</div>
+          <div class="tags"><span class="tag tag-green">Rifornimento obbligatorio</span></div>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-box-title">🚗 Tappa di guida lunga</div>
+        <ul>
+          <li><strong>~400 km totali</strong> — la tappa più impegnativa del viaggio</li>
+          <li>I fiordi orientali (tra Egilsstaðir e Höfn) sono scenici ma le strade si insinuano lentamente tra i fiordi</li>
+          <li>Partire presto da Mývatn per avere tempo per Dettifoss</li>
+          <li>Fare pieno a Mývatn prima di partire</li>
+        </ul>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 5 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">Seljavellir Guesthouse</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Seljavellir, 781 Höfn, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">3 camere con vista montagna · 7 adulti</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> dalle 16:30</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> entro le 11:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 539 5093</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">6868494828</span></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€373,23</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 6 — Sabato 28 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g6">
+  <div class="day-header">
+    <span class="day-badge">Giorno 6</span>
+    <span class="day-title">Ghiacciai &amp; Costa Sud</span>
+    <span class="day-date">Sabato 28 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Höfn</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Jökulsárlón → Skaftafell → Vík</span>
+    <span class="route-dist">~240 km · ~3h guida</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">🧊</div>
+        <div>
+          <div class="attr-name">Jökulsárlón — Laguna Glaciale</div>
+          <div class="attr-desc">Iceberg turchesi e bianchi galleggiano nel lago prima di scivolare in mare. Una delle meraviglie assolute d'Islanda. ~80 km ovest di Höfn. Parcheggio a pagamento.</div>
+          <div class="tags"><span class="tag tag-blue">Must-see assoluto</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">💎</div>
+        <div>
+          <div class="attr-name">Diamond Beach</div>
+          <div class="attr-desc">Di fronte a Jökulsárlón: blocchi di ghiaccio cristallino scintillano sulla sabbia nera. Incredibile per la fotografia, specialmente all'alba.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏔️</div>
+        <div>
+          <div class="attr-name">Skaftafell — Parco Vatnajökull</div>
+          <div class="attr-desc">Punto di partenza per escursioni sul ghiacciaio. Sentiero per Svartifoss: ~5,5 km A/R, ~2h. La cascata ha colonne basaltiche esagonali che hanno ispirato Hallgrímskirkja.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏖️</div>
+        <div>
+          <div class="attr-name">Reynisfjara — Spiaggia Nera</div>
+          <div class="attr-desc">La spiaggia vulcanica più famosa d'Islanda. Faraglioni di Reynisdrangar, colonne basaltiche esagonali, grotta di Hálsanefshellir.</div>
+          <div class="attr-warn">⚠️ PERICOLO: Onde improvvise (sneaker waves) letali! Mai voltare le spalle al mare. Restare lontano dalla riva.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🦅</div>
+        <div>
+          <div class="attr-name">Dyrhólaey</div>
+          <div class="attr-desc">Promontorio con arco di roccia naturale. Vista panoramica mozzafiato su Reynisfjara e la costa. Colonia di pulcinella di mare (puffin) in estate.</div>
+        </div>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 6 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">The Barn Hostel</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Norðurfoss, 871 Vík, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">4 posti letto dormitorio misto · 7 adulti</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> 15:00 – 23:30</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> 05:30 – 11:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 779 1166</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">5663981789</span></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€374,12</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 7 — Domenica 29 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g7">
+  <div class="day-header">
+    <span class="day-badge">Giorno 7</span>
+    <span class="day-title">Golden Circle</span>
+    <span class="day-date">Domenica 29 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Vík</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Skógafoss → Seljalandsfoss → Geysir → Gullfoss → Laugarvatn</span>
+    <span class="route-dist">~200 km · ~3h guida</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">💧</div>
+        <div>
+          <div class="attr-name">Skógafoss</div>
+          <div class="attr-desc">Cascata larga 25m e alta 60m. Scalinata laterale per vista dall'alto. Arcobaleno frequente nelle giornate di sole. Prima attrazione guidando ovest da Vík.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">💧</div>
+        <div>
+          <div class="attr-name">Seljalandsfoss</div>
+          <div class="attr-desc">Cascata di 60m dietro cui si può camminare (passaggio sul retro)! Portare giacca impermeabile obbligatoria.</div>
+          <div class="tags"><span class="tag tag-teal">Portare impermeabile</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">♨️</div>
+        <div>
+          <div class="attr-name">Geysir &amp; Strokkur</div>
+          <div class="attr-desc">Area geotermica: lo Strokkur erutta ogni 5–10 minuti fino a 30m di altezza. Gratuito. Centro visitatori con shop e ristorante.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">💧</div>
+        <div>
+          <div class="attr-name">Gullfoss — Cascata Dorata</div>
+          <div class="attr-desc">Due salti per 32m totali nel canyon del fiume Hvítá. Potenza immensa. Sentieri di osservazione a più livelli. Gratuito.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🌊</div>
+        <div>
+          <div class="attr-name">Fontana Geothermal Baths</div>
+          <div class="attr-desc">Bagni geotermali sul lago di Laugarvatn con saune a vapore naturale dal sottosuolo. Vicinissimo all'alloggio — perfetto per fine giornata.</div>
+          <div class="tags"><span class="tag tag-purple">Vicino all'alloggio</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 7 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">Héradsskólinn Historic Guesthouse</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Héradsskóli, 840 Laugarvatn, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">3 camere: 1 tripla + 2 matrimoniali · bagno comune</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> 15:00 – 21:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> 08:00 – 10:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 537 8060</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">5807501433</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">🍳</span><span class="booking-row-text">Colazione disponibile: <strong>€18/persona</strong></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€365,16</span>
+          </div>
+        </div>
+      </div>
+      <div class="booking-alert">⚠️ Sacchi a pelo <strong>NON ammessi</strong>. Check-out anticipato: entro le 10:00.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 8 — Lunedì 30 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g8">
+  <div class="day-header">
+    <span class="day-badge">Giorno 8</span>
+    <span class="day-title">Þingvellir &amp; Reykjavík</span>
+    <span class="day-date">Lunedì 30 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Laugarvatn</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Þingvellir → Reykjavík → Blue Lagoon → Hafnarfjörður</span>
+    <span class="route-dist">~110 km · ~1h 30min guida</span>
+  </div>
+  <div class="day-body">
+    <div class="day-left">
+      <div class="col-label">Attrazioni della giornata</div>
+
+      <div class="attraction">
+        <div class="attr-icon">🌍</div>
+        <div>
+          <div class="attr-name">Þingvellir — Sito UNESCO</div>
+          <div class="attr-desc">Dove le placche tettoniche nordamericana ed eurasiatica si separano visibilmente. Sede del più antico parlamento del mondo (Alþing, 930 d.C.). ~20 min da Laugarvatn.</div>
+          <div class="tags"><span class="tag tag-blue">Patrimonio UNESCO</span></div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">⛪</div>
+        <div>
+          <div class="attr-name">Hallgrímskirkja</div>
+          <div class="attr-desc">Chiesa iconica di Reykjavík ispirata alle colonne basaltiche. Salire sulla torre per vista panoramica sulla città. Torre: ~€10/pp.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🏛️</div>
+        <div>
+          <div class="attr-name">Harpa Concert Hall</div>
+          <div class="attr-desc">Spettacolare edificio in vetro sul porto di Reykjavík. Architettura di Ólafur Elíasson. Ingresso libero per ammirare l'interno.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">⚓</div>
+        <div>
+          <div class="attr-name">Sun Voyager</div>
+          <div class="attr-desc">Scultura in acciaio sul lungomare, simbolo di Reykjavík a forma di nave vichinga. Perfetta al tramonto con le montagne sullo sfondo.</div>
+        </div>
+      </div>
+
+      <div class="attraction">
+        <div class="attr-icon">🌊</div>
+        <div>
+          <div class="attr-name">Blue Lagoon</div>
+          <div class="attr-desc">La spa geotermica più famosa d'Islanda. Ideale come ultima attività prima di Hafnarfjörður: sulla strada per l'aeroporto (KEF ~20 min).</div>
+          <div class="attr-warn">⚠️ PRENOTARE IN ANTICIPO — disponibilità limitatissima! Da €75/persona.</div>
+          <div class="tags"><span class="tag tag-orange">Prenotazione obbligatoria</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="day-right">
+      <div class="col-label">Alloggio stanotte</div>
+      <div class="booking-card">
+        <div class="booking-card-header">Notte 8 di 8</div>
+        <div class="booking-card-body">
+          <div class="booking-name">Hostel Fjordur</div>
+          <div class="booking-row"><span class="booking-row-icon">📍</span><span class="booking-row-text">Sudurgata 18, 220 Hafnarfjörður, Islanda</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🛏️</span><span class="booking-row-text">2 camere quadruple economy · 7 adulti</span></div>
+          <div class="booking-row"><span class="booking-row-icon">✅</span><span class="booking-row-text"><strong>Check-in:</strong> 15:00 – 23:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">🚪</span><span class="booking-row-text"><strong>Check-out:</strong> entro le 11:00</span></div>
+          <div class="booking-row"><span class="booking-row-icon">📞</span><span class="booking-row-text"><span class="mono">+354 894 5261</span></span></div>
+          <div class="booking-row"><span class="booking-row-icon">📋</span><span class="booking-row-text">Conf: <span class="mono">6127932045</span></span></div>
+          <div class="booking-price">
+            <span class="booking-price-label">Totale struttura</span>
+            <span class="booking-price-val">€195,43</span>
+          </div>
+        </div>
+      </div>
+      <div class="info-box" style="margin-top:0.8rem">
+        <div class="info-box-title">Domani: Giorno 9 — Partenza</div>
+        <ul>
+          <li>Hafnarfjörður → KEF: ~30 km, ~25 min</li>
+          <li>Riconsegna auto: verificare orario con la società di noleggio</li>
+          <li>Arrivare in aeroporto almeno 2h prima del volo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     GIORNO 9 — Martedì 31 Marzo
+════════════════════════════════════════════ -->
+<div class="page" id="g9">
+  <div class="day-header">
+    <span class="day-badge">Giorno 9</span>
+    <span class="day-title">Partenza da Keflavík</span>
+    <span class="day-date">Martedì 31 Marzo 2026</span>
+  </div>
+  <div class="route-bar">
+    <span class="route-from">Hafnarfjörður</span>
+    <span class="route-arrow">→</span>
+    <span class="route-to">Aeroporto di Keflavík (KEF)</span>
+    <span class="route-dist">~30 km · ~25 min</span>
+  </div>
+  <div class="departure-box">
+    <div class="departure-icon">✈️</div>
+    <div class="departure-title">Buon viaggio di ritorno!</div>
+    <div class="departure-subtitle">Hafnarfjörður → KEF: circa 25 minuti</div>
+  </div>
+  <div style="padding: 0 2.5rem 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+    <div class="info-box">
+      <div class="info-box-title">Checklist partenza</div>
+      <ul>
+        <li>Check-out entro le 11:00</li>
+        <li>Riconsegna auto: serbatoio pieno?</li>
+        <li>Restituire chiavi e documenti auto</li>
+        <li>Check-in online già fatto?</li>
+        <li>Nessun oggetto dimenticato in auto</li>
+        <li>Duty free in aeroporto (alcolici Islanda!)</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <div class="info-box-title">Numeri utili KEF</div>
+      <ul>
+        <li>Aeroporto Keflavík: <strong>+354 425 0600</strong></li>
+        <li>Emergenze: <strong>112</strong></li>
+        <li>Terminal 1 (principale): partenze internazionali</li>
+        <li>Bus Flybus per Reykjavík se necessario</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGINA DI RIFERIMENTO — Numeri e Codici
+════════════════════════════════════════════ -->
+<div class="page" id="ref">
+  <div class="day-header" style="background: #2A3D2A;">
+    <span class="day-badge" style="color: #9FD4A0;">Riferimento rapido</span>
+    <span class="day-title">Prenotazioni &amp; Numeri</span>
+    <span class="day-date" style="color: #9FD4A0;">Tutti gli alloggi</span>
+  </div>
+  <div class="ref-body">
+    <table class="ref-table">
+      <thead>
+        <tr>
+          <th>G</th>
+          <th>Data</th>
+          <th>Struttura</th>
+          <th>Telefono</th>
+          <th>Conf. #</th>
+          <th>Check-in</th>
+          <th>Check-out</th>
+          <th style="text-align:right">€</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1</strong></td>
+          <td>Lun 23/3</td>
+          <td>Fossatun Camping Pods</td>
+          <td class="tel">+354 893 9733</td>
+          <td class="mono">5345748490</td>
+          <td>16:00–20:00</td>
+          <td>–11:00</td>
+          <td style="text-align:right">210,31</td>
+        </tr>
+        <tr>
+          <td><strong>2</strong></td>
+          <td>Mar 24/3</td>
+          <td>Fagrabrekka GH <em style="font-size:0.75rem">(keybox: 4443)</em></td>
+          <td class="tel">+354 698 1687</td>
+          <td class="mono">5923780546</td>
+          <td>17:00–24:00</td>
+          <td>–11:00</td>
+          <td style="text-align:right">172,50</td>
+        </tr>
+        <tr>
+          <td><strong>3</strong></td>
+          <td>Mer 25/3</td>
+          <td>Hlín Guesthouse</td>
+          <td class="tel">+354 772 7957</td>
+          <td class="mono">5053573430</td>
+          <td>16:00–23:30</td>
+          <td>07:30–11:00</td>
+          <td style="text-align:right">277,71</td>
+        </tr>
+        <tr>
+          <td><strong>4</strong></td>
+          <td>Gio 26/3</td>
+          <td>Vogar Travel Service</td>
+          <td class="tel">+354 464 4399</td>
+          <td class="mono">6034027040</td>
+          <td>16:00–23:00</td>
+          <td>06:00–11:00</td>
+          <td style="text-align:right">253,71</td>
+        </tr>
+        <tr>
+          <td><strong>5</strong></td>
+          <td>Ven 27/3</td>
+          <td>Seljavellir Guesthouse</td>
+          <td class="tel">+354 539 5093</td>
+          <td class="mono">6868494828</td>
+          <td>dalle 16:30</td>
+          <td>–11:00</td>
+          <td style="text-align:right">373,23</td>
+        </tr>
+        <tr>
+          <td><strong>6</strong></td>
+          <td>Sab 28/3</td>
+          <td>The Barn Hostel</td>
+          <td class="tel">+354 779 1166</td>
+          <td class="mono">5663981789</td>
+          <td>15:00–23:30</td>
+          <td>05:30–11:00</td>
+          <td style="text-align:right">374,12</td>
+        </tr>
+        <tr>
+          <td><strong>7</strong></td>
+          <td>Dom 29/3</td>
+          <td>Héradsskólinn GH</td>
+          <td class="tel">+354 537 8060</td>
+          <td class="mono">5807501433</td>
+          <td>15:00–21:00</td>
+          <td>08:00–10:00</td>
+          <td style="text-align:right">365,16</td>
+        </tr>
+        <tr>
+          <td><strong>8</strong></td>
+          <td>Lun 30/3</td>
+          <td>Hostel Fjordur</td>
+          <td class="tel">+354 894 5261</td>
+          <td class="mono">6127932045</td>
+          <td>15:00–23:00</td>
+          <td>–11:00</td>
+          <td style="text-align:right">195,43</td>
+        </tr>
+        <tr style="font-weight:700; background: var(--bg-day);">
+          <td colspan="7" style="border-top:2px solid #2A3D2A; padding-top:0.7rem;">Totale alloggi</td>
+          <td style="text-align:right; border-top:2px solid #2A3D2A; font-family:'JetBrains Mono',monospace; color: #2A3D2A; padding-top:0.7rem;">€2.222,17</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+      <div class="info-box">
+        <div class="info-box-title">🌐 Siti utili</div>
+        <ul>
+          <li><strong>road.is</strong> — condizioni stradali</li>
+          <li><strong>vedur.is</strong> — meteo islandese</li>
+          <li><strong>safetravel.is</strong> — registrazione emergenze</li>
+          <li><strong>northbound.is</strong> — confronto noleggi auto</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <div class="info-box-title">📞 Numeri emergenza</div>
+        <ul>
+          <li><strong>112</strong> — Emergenze generali</li>
+          <li><strong>+354 425 0600</strong> — Aeroporto KEF</li>
+          <li>Soccorso alpino: <strong>ICE-SAR</strong></li>
+          <li>Polizia non-emergenza: <strong>+354 444 1000</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

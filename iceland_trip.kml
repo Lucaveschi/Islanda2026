@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Islanda Ring Road - 23-31 Marzo 2026</name>
+  <description>Itinerario completo Ring Road Islanda per 7 viaggiatori</description>
+
+  <!-- STYLES -->
+  <Style id="alloggio">
+    <IconStyle>
+      <color>ff0055ff</color>
+      <scale>1.3</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/shapes/lodging.png</href></Icon>
+    </IconStyle>
+  </Style>
+  <Style id="attrazione">
+    <IconStyle>
+      <color>ff00aaff</color>
+      <scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/shapes/star.png</href></Icon>
+    </IconStyle>
+  </Style>
+  <Style id="cascata">
+    <IconStyle>
+      <color>ffffaa00</color>
+      <scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/shapes/water.png</href></Icon>
+    </IconStyle>
+  </Style>
+  <Style id="aeroporto">
+    <IconStyle>
+      <color>ff0000ff</color>
+      <scale>1.2</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/shapes/airports.png</href></Icon>
+    </IconStyle>
+  </Style>
+  <Style id="geotermale">
+    <IconStyle>
+      <color>ff0088ff</color>
+      <scale>1.0</scale>
+      <Icon><href>http://maps.google.com/mapfiles/kml/shapes/volcano.png</href></Icon>
+    </IconStyle>
+  </Style>
+  <Style id="route">
+    <LineStyle>
+      <color>ff0055ff</color>
+      <width>4</width>
+    </LineStyle>
+  </Style>
+
+  <!-- ============================================ -->
+  <!-- LAYER 1: ALLOGGI -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>🏨 Alloggi</name>
+    <Placemark>
+      <name>✈️ Aeroporto Keflavik (KEF)</name>
+      <description><![CDATA[
+        <b>Partenza/Arrivo</b><br/>
+        Aeroporto Internazionale di Keflavik<br/>
+        <i>Punto di partenza e ritorno del viaggio</i>
+      ]]></description>
+      <styleUrl>#aeroporto</styleUrl>
+      <Point><coordinates>-22.6056,63.9850,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 1 - Fossatun Camping Pods</name>
+      <description><![CDATA[
+        <b>Fossatun Camping Pods &amp; Cottages</b><br/>
+        📍 Fossatún, 311 Fossatún, Islanda<br/>
+        📅 Lun 23 Mar → Mar 24 Mar<br/>
+        🕐 Check-in: 16:00-20:00 | Check-out: 08:00-11:00<br/>
+        🛏️ 3 bungalow (2 Duo + 1 Triple) - 7 adulti<br/>
+        💰 €210,31<br/>
+        📞 +354 893 9733<br/>
+        📋 Conf: 5345748490<br/>
+        ⚠️ Biancheria NON inclusa, sacchi a pelo ammessi<br/>
+        Reception: 15:00-20:00 (inverno)
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-21.1830,64.6680,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 2 - Fagrabrekka Guesthouse</name>
+      <description><![CDATA[
+        <b>Fagrabrekka Guesthouse</b><br/>
+        📍 Fagrabrekka, 500 Staður, Islanda<br/>
+        📅 Mar 24 Mar → Mer 25 Mar<br/>
+        🕐 Check-in: 17:00-24:00 | Check-out: 11:00<br/>
+        🛏️ 2 Camere Matrimoniali Economy - 7 adulti<br/>
+        💰 €172,50<br/>
+        📞 +354 698 1687<br/>
+        📋 Conf: 5923780546<br/>
+        🔑 Keybox alla porta, codice: 4443
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-23.6500,64.8900,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 3 - Hlín Guesthouse</name>
+      <description><![CDATA[
+        <b>Hlín Guesthouse</b><br/>
+        📍 Steinsstaðir, 560 Varmahlíð, Islanda<br/>
+        📅 Mer 25 Mar → Gio 26 Mar<br/>
+        🕐 Check-in: 16:00-23:30 | Check-out: 07:30-11:00<br/>
+        🛏️ 3 camere (matrimoniale + tripla + doppia) - 7 adulti<br/>
+        💰 €277,71<br/>
+        📞 +354 7727957<br/>
+        📋 Conf: 5053573430<br/>
+        ⚠️ Nessuna reception
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-19.5170,65.6330,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 4 - Vogar Travel Service</name>
+      <description><![CDATA[
+        <b>Vogar Travel Service</b><br/>
+        📍 Vogar, 660 Mývatn, Islanda<br/>
+        📅 Gio 26 Mar → Ven 27 Mar<br/>
+        🕐 Check-in: 16:00-23:00 | Check-out: 06:00-11:00<br/>
+        🛏️ 2 camere (familiare + tripla) - 7 adulti<br/>
+        💰 €253,71<br/>
+        📞 +354 464 4399<br/>
+        📋 Conf: 6034027040
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-16.9460,65.6240,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 5 - Seljavellir Guesthouse</name>
+      <description><![CDATA[
+        <b>Seljavellir Guesthouse</b><br/>
+        📍 Seljavellir, 781 Höfn, Islanda<br/>
+        📅 Ven 27 Mar → Sab 28 Mar<br/>
+        🕐 Check-in: dalle 16:30 | Check-out: 11:00<br/>
+        🛏️ 3 camere con vista montagna - 7 adulti<br/>
+        💰 €373,23<br/>
+        📞 +354 539 5093<br/>
+        📋 Conf: 6868494828
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-15.2080,64.2530,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 6 - The Barn</name>
+      <description><![CDATA[
+        <b>The Barn Hostel</b><br/>
+        📍 Norðurfoss, 871 Vík, Islanda<br/>
+        📅 Sab 28 Mar → Dom 29 Mar<br/>
+        🕐 Check-in: 15:00-23:30 | Check-out: 05:30-11:00<br/>
+        🛏️ 4 posti letto dormitorio misto - 7 adulti<br/>
+        💰 €374,12<br/>
+        📞 +354 779 1166<br/>
+        📋 Conf: 5663981789
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-19.0060,63.4186,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 7 - Héradsskólinn Historic GH</name>
+      <description><![CDATA[
+        <b>Héradsskólinn Historic Guesthouse</b><br/>
+        📍 Héradsskóli, 840 Laugarvatn, Islanda<br/>
+        📅 Dom 29 Mar → Lun 30 Mar<br/>
+        🕐 Check-in: 15:00-21:00 | Check-out: 08:00-10:00<br/>
+        🛏️ 3 camere (1 tripla + 2 matrimoniali) bagno comune - 7 adulti<br/>
+        💰 €365,16<br/>
+        📞 +354 537 8060<br/>
+        📋 Conf: 5807501433<br/>
+        🍳 Colazione disponibile €18/persona<br/>
+        ⚠️ Sacchi a pelo NON ammessi
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-20.7290,64.2170,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏠 Notte 8 - Hostel Fjordur</name>
+      <description><![CDATA[
+        <b>Hostel Fjordur</b><br/>
+        📍 Sudurgata 18, 220 Hafnarfjörður, Islanda<br/>
+        📅 Lun 30 Mar → Mar 31 Mar<br/>
+        🕐 Check-in: 15:00-23:00 | Check-out: 01:00-11:00<br/>
+        🛏️ 2 camere quadruple economy - 7 adulti<br/>
+        💰 €195,43<br/>
+        📞 +354 894 5261<br/>
+        📋 Conf: 6127932045
+      ]]></description>
+      <styleUrl>#alloggio</styleUrl>
+      <Point><coordinates>-21.9543,64.0671,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 2: ATTRAZIONI GIORNO 1 (Fossatún) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G1 - Attrazioni zona Fossatún</name>
+    <Placemark>
+      <name>💧 Hraunfossar &amp; Barnafoss</name>
+      <description><![CDATA[Cascate gemelle spettacolari. L'acqua di Hraunfossar filtra attraverso il campo lavico.<br/>📏 ~25 min da Fossatún | Gratuito]]></description>
+      <styleUrl>#cascata</styleUrl>
+      <Point><coordinates>-20.9750,64.7030,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Deildartunguhver</name>
+      <description><![CDATA[La sorgente termale più potente d'Europa (180 l/sec a 100°C).<br/>Krauma Geothermal Baths nelle vicinanze.<br/>📏 ~15 min da Fossatún]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-21.4080,64.6640,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Reykholt (Snorri Sturluson)</name>
+      <description><![CDATA[Sito storico medievale, residenza di Snorri Sturluson, autore delle saghe norrene.<br/>📏 ~20 min da Fossatún]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-21.2960,64.6650,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Grotta di Víðgelmir</name>
+      <description><![CDATA[Il più grande lava tube d'Islanda (~1.600m). Tour guidato disponibile.<br/>📏 ~30 min da Fossatún]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-20.8190,64.7530,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 3: ATTRAZIONI GIORNO 2 (Snæfellsnes) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G2 - Penisola Snæfellsnes</name>
+    <Placemark>
+      <name>⭐ Kirkjufell</name>
+      <description><![CDATA[La montagna più fotografata d'Islanda. Splendida con la cascata Kirkjufellsfoss.<br/>📍 Grundarfjörður]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-23.3070,64.9426,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>🏔️ Snæfellsjökull</name>
+      <description><![CDATA[Vulcano-ghiacciaio reso famoso da Jules Verne in "Viaggio al centro della Terra".<br/>Visibile da Reykjavik in giornate limpide.]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-23.7760,64.8080,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Arnarstapi &amp; Gatklettur</name>
+      <description><![CDATA[Scogliere spettacolari e arco di roccia naturale. Sentiero costiero fino a Hellnar (~2.5 km).]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-23.6240,64.7670,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Djúpalónssandur</name>
+      <description><![CDATA[Spiaggia nera con formazioni rocciose e resti di un naufragio. "Pietre del sollevamento" per testare la forza.]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-23.9360,64.7520,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⛪ Chiesa nera di Búðir</name>
+      <description><![CDATA[Iconica chiesetta nera isolata nel campo lavico di Búðahraun. Incredibilmente fotogenica.]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-23.3890,64.8200,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 4: ATTRAZIONI GIORNO 3 (Varmahlíð) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G3 - Zona Skagafjörður</name>
+    <Placemark>
+      <name>⭐ Hvítserkur</name>
+      <description><![CDATA[Monolite di roccia basaltica di 15m in mare, a forma di drago o rinoceronte.<br/>📏 ~45 min da Varmahlíð | Sterrato, attenzione al fango]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-20.6380,65.6060,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Glaumbær</name>
+      <description><![CDATA[Museo con fattoria tradizionale islandese con tetti d'erba. Perfettamente conservata.<br/>📏 ~10 min da Varmahlíð]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-19.5050,65.6590,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 5: ATTRAZIONI GIORNO 4 (Mývatn) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G4 - Akureyri &amp; Mývatn</name>
+    <Placemark>
+      <name>⭐ Akureyri</name>
+      <description><![CDATA[Capitale del Nord. Akureyrarkirkja, giardino botanico, centro storico.<br/>📏 ~1h da Varmahlíð sulla Route 1]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-18.0907,65.6835,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>💧 Goðafoss</name>
+      <description><![CDATA[La "Cascata degli Dei" - dove le statue pagane vennero gettate nel 1000 d.C.<br/>Semicircolare, larga 30m, alta 12m. Spettacolare.<br/>📏 ~40 min da Akureyri]]></description>
+      <styleUrl>#cascata</styleUrl>
+      <Point><coordinates>-17.5510,65.6830,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Hverir / Námaskarð</name>
+      <description><![CDATA[Area geotermica lunare con fumarole, pozze di fango bollente e depositi di zolfo.<br/>Gratuito. Odore di zolfo forte! Restare sui sentieri.]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-16.8190,65.6410,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Dimmuborgir</name>
+      <description><![CDATA["Castelli oscuri" - Formazioni laviche surreali con archi e grotte. Sentieri segnalati 1-3 km.<br/>📍 Lago Mývatn | Gratuito]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-16.9110,65.5910,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Mývatn Nature Baths</name>
+      <description><![CDATA[Alternativa economica alla Blue Lagoon. Piscina geotermica con vista sul lago.<br/>💰 ~€40/persona | Prenotare online consigliato]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-16.8460,65.6300,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Grjótagjá</name>
+      <description><![CDATA[Grotta termale vulcanica. Set di Game of Thrones (Jon &amp; Ygritte).<br/>⚠️ Acqua troppo calda per bagnarsi, solo da ammirare.]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-16.8830,65.6260,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 6: ATTRAZIONI GIORNO 5 (Mývatn→Höfn) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G5 - Mývatn → Höfn</name>
+    <Placemark>
+      <name>💧 Dettifoss</name>
+      <description><![CDATA[La cascata più potente d'Europa! 100m di larghezza, 44m di altezza.<br/>📏 Deviazione ~30 min da Route 1 (strada 862 lato ovest)<br/>⚠️ Verificare condizioni strada a marzo]]></description>
+      <styleUrl>#cascata</styleUrl>
+      <Point><coordinates>-16.3845,65.8147,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Egilsstaðir</name>
+      <description><![CDATA[Punto di sosta ideale per pranzo e rifornimento carburante.<br/>Supermercato Bónus disponibile.<br/>📏 A metà percorso Mývatn→Höfn]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-14.3948,65.2531,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 7: ATTRAZIONI GIORNO 6 (Höfn→Vík) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G6 - Höfn → Vík</name>
+    <Placemark>
+      <name>⭐ Jökulsárlón (IMPERDIBILE)</name>
+      <description><![CDATA[<b>Laguna glaciale con iceberg galleggianti.</b><br/>Una delle meraviglie naturali d'Islanda. Possibilità di boat tour tra gli iceberg.<br/>📏 ~80 km ovest di Höfn | Gratuito | Parcheggio a pagamento]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-16.1790,64.0784,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Diamond Beach</name>
+      <description><![CDATA[Spiaggia nera con blocchi di ghiaccio che brillano come diamanti. Di fronte a Jökulsárlón.<br/>📷 Incredibile per fotografia, soprattutto all'alba/tramonto.]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-16.1750,64.0440,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Skaftafell (Vatnajökull NP)</name>
+      <description><![CDATA[Parco Nazionale. Punto di partenza per escursioni su ghiacciaio e sentiero per Svartifoss.<br/>🥾 Sentiero Svartifoss: ~5.5 km A/R, ~2h]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-16.9710,64.0160,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>💧 Svartifoss</name>
+      <description><![CDATA[Cascata con colonne basaltiche esagonali. Ha ispirato l'architettura di Hallgrímskirkja.<br/>🥾 Da Skaftafell, ~45 min a piedi in salita]]></description>
+      <styleUrl>#cascata</styleUrl>
+      <Point><coordinates>-16.9750,64.0280,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Reynisfjara (spiaggia nera)</name>
+      <description><![CDATA[<b>Spiaggia nera vulcanica più famosa d'Islanda.</b><br/>Faraglioni di Reynisdrangar, colonne basaltiche, grotta.<br/>⚠️ ATTENZIONE: Sneaker waves estremamente pericolose! Mai voltare le spalle al mare!]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-19.0440,63.4040,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Dyrhólaey</name>
+      <description><![CDATA[Promontorio con arco di roccia naturale. Vista panoramica su Reynisfjara e costa.<br/>🐦 Colonia di pulcinella di mare (puffin) in estate.]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-19.1290,63.4020,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 8: ATTRAZIONI GIORNO 7 (Golden Circle) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G7 - Golden Circle</name>
+    <Placemark>
+      <name>💧 Seljalandsfoss</name>
+      <description><![CDATA[Cascata di 60m dietro cui si può camminare! Porta giacca impermeabile.<br/>📏 Lungo la Route 1, ~60 km da Vík]]></description>
+      <styleUrl>#cascata</styleUrl>
+      <Point><coordinates>-19.9886,63.6156,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>💧 Skógafoss</name>
+      <description><![CDATA[Cascata maestosa larga 25m e alta 60m. Scalinata laterale per vista dall'alto.<br/>🌈 Arcobaleno frequente nelle giornate di sole.]]></description>
+      <styleUrl>#cascata</styleUrl>
+      <Point><coordinates>-19.5113,63.5321,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Geysir &amp; Strokkur</name>
+      <description><![CDATA[Area geotermica con il famoso geyser Strokkur che erutta ogni 5-10 minuti fino a 30m.<br/>Gratuito. Centro visitatori con shop e ristorante.]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-20.3020,64.3103,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>💧 Gullfoss</name>
+      <description><![CDATA["Cascata dorata" - Due salti per 32m totali nel canyon del fiume Hvítá.<br/>Potenza immensa. Sentieri di osservazione a più livelli. Gratuito.]]></description>
+      <styleUrl>#cascata</styleUrl>
+      <Point><coordinates>-20.1288,64.3271,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Þingvellir (Thingvellir)</name>
+      <description><![CDATA[<b>Sito UNESCO.</b> Dove si incontrano le placche tettoniche nordamericana ed eurasiatica.<br/>Sede del più antico parlamento del mondo (930 d.C.).<br/>🤿 Silfra fissure per snorkeling/diving (prenotare).]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-21.1187,64.2559,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Fontana Geothermal Baths</name>
+      <description><![CDATA[Bagni geotermali sul lago di Laugarvatn. Saune con vapore naturale dal sottosuolo.<br/>📏 A Laugarvatn, vicinissimo all'alloggio]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-20.7310,64.2190,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Secret Lagoon (Flúðir)</name>
+      <description><![CDATA[Piscina termale naturale, la più antica d'Islanda (1891). Più autentica e meno turistica della Blue Lagoon.<br/>📏 ~35 min da Laugarvatn]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-20.3090,64.1370,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- LAYER 9: ATTRAZIONI GIORNO 8 (Reykjavik) -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>⭐ G8 - Reykjavik &amp; dintorni</name>
+    <Placemark>
+      <name>⛪ Hallgrímskirkja</name>
+      <description><![CDATA[Chiesa iconica di Reykjavik. Salire sulla torre per vista panoramica sulla città.<br/>💰 Torre: ~€10 | Centro Reykjavik]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-21.9268,64.1420,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Harpa Concert Hall</name>
+      <description><![CDATA[Spettacolare edificio in vetro sul porto. Architettura di Ólafur Elíasson.<br/>Ingresso libero per ammirare l'interno.]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-21.9327,64.1504,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⭐ Sun Voyager</name>
+      <description><![CDATA[Scultura in acciaio sul lungomare. Simbolo di Reykjavik, a forma di nave vichinga.<br/>📷 Perfetta al tramonto con vista sulle montagne.]]></description>
+      <styleUrl>#attrazione</styleUrl>
+      <Point><coordinates>-21.9220,64.1476,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>♨️ Blue Lagoon</name>
+      <description><![CDATA[<b>La spa geotermica più famosa d'Islanda.</b><br/>📏 Sulla strada per l'aeroporto (~20 min da KEF)<br/>⚠️ PRENOTARE IN ANTICIPO - si esaurisce velocemente!<br/>💰 Da €75/persona | Ideale ultimo giorno prima del volo]]></description>
+      <styleUrl>#geotermale</styleUrl>
+      <Point><coordinates>-22.4490,63.8803,0</coordinates></Point>
+    </Placemark>
+  </Folder>
+
+  <!-- ============================================ -->
+  <!-- ROUTE LINE -->
+  <!-- ============================================ -->
+  <Folder>
+    <name>🛣️ Percorso Ring Road</name>
+    <Placemark>
+      <name>Route principale</name>
+      <description>Percorso Ring Road approssimativo ~1.715 km</description>
+      <styleUrl>#route</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          -22.6056,63.9850,0
+          -21.9543,64.0671,0
+          -21.1830,64.6680,0
+          -23.6500,64.8900,0
+          -20.6380,65.6060,0
+          -19.5170,65.6330,0
+          -18.0907,65.6835,0
+          -16.9460,65.6240,0
+          -15.2080,64.2530,0
+          -16.1790,64.0784,0
+          -19.0060,63.4186,0
+          -19.9886,63.6156,0
+          -20.7290,64.2170,0
+          -21.9543,64.0671,0
+          -22.6056,63.9850,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Folder>
+
+</Document>
+</kml>
